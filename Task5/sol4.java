@@ -10,9 +10,9 @@ public class sol4 {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your birthdate(yyyy-mm-dd): ");
-        String a = sc.nextLine();
+        String dob = sc.nextLine();
 
-        LocalDate birthDate = LocalDate.parse(a, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate birthDate = LocalDate.parse(dob, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         LocalDate date = LocalDate.now();
 
         Period age = Period.between(birthDate, date);
