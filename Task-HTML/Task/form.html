@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form class="survey" novalidate>
+            <div class="name row">
+                <label class="name label">Name <sup class="req">*</sup></label>
+                <div class="name-grid">
+                    <input type="text" id="first" name="first" placeholder="First" required>
+                    <input type="text" id="last" name="last" placeholder="Last">
+                </div>
+            </div><br>
+
+            <div class="email row">
+                <label class="email label" for="email">Email <sup class="req">*</sup></label>
+                <div class="email-input">
+                    <input type="email" name="email" id="email" required>
+                </div>
+            </div><br>
+
+            <div class="experience row"> 
+                <label class="experience label">Your Experience <sup class="req">*</sup></label>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                Overall, how would you rate your experience with us?
+            </div>
+
+            <div class="section">
+                <div>Howsatisfied are you with <sup class="req">*</sup></div>
+
+                <div class="radio-header">
+                    <div>Very Unsatisfied</div>
+                    <div>Unsatisfied</div>
+                    <div>Neutral</div>
+                    <div>Satisfied</div>
+                    <div>Very Satisfied</div>
+                </div>
+
+                <div class="radio-rows">
+                    <div class="row-label">Purchase</div>
+                    <div class="radios">
+                    <label><input type="radio" name="purchase"></label>
+                    <label><input type="radio" name="purchase"></label>
+                    <label><input type="radio" name="purchase"></label>
+                    <label><input type="radio" name="purchase"></label>
+                    <label><input type="radio" name="purchase"></label>
+                    </div>
+                </div>
+
+                <div class="radio-rows">
+                    <div class="row-label">Service</div>
+                    <div class="radios">
+                    <label><input type="radio" name="servive"></label>
+                    <label><input type="radio" name="servive"></label>
+                    <label><input type="radio" name="servive"></label>
+                    <label><input type="radio" name="servive"></label>
+                    <label><input type="radio" name="servive"></label>
+                    </div>
+                </div>
+
+                <div class="radio-rows">
+                    <div class="row-label">Company Overall</div>
+                    <div class="radios">
+                    <label><input type="radio" name="company"></label>
+                    <label><input type="radio" name="company"></label>
+                    <label><input type="radio" name="company"></label>
+                    <label><input type="radio" name="company"></label>
+                    <label><input type="radio" name="company"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div>How likely are you to <sup>*</sup></div>
+
+                <div class="radio-header">
+                    <div>Very Unlikely</div>
+                    <div>Unlikely</div>
+                    <div>Neutral</div>
+                    <div>Likely</div>
+                    <div>very Likely</div>
+                </div>
+
+                <div class="radio-rows">
+                    <div class="row-label">Buy from us again</div>
+                    <div class="radios">
+                        <label><input type="radio" name="buyAgain"></label>
+                        <label><input type="radio" name="buyAgain"></label>
+                        <label><input type="radio" name="buyAgain"></label>
+                        <label><input type="radio" name="buyAgain"></label>
+                        <label><input type="radio" name="buyAgain"></label>
+                    </div>
+                </div>
+
+                <div class="radio-rows">
+                    <div class="row-label">Recommend our <br> product to others</div>
+                    <div class="radios">
+                        <label><input type="radio" name="product_rec"></label>
+                        <label><input type="radio" name="product_rec"></label>
+                        <label><input type="radio" name="product_rec"></label>
+                        <label><input type="radio" name="product_rec"></label>
+                        <label><input type="radio" name="product_rec"></label>                  
+                    </div>
+                </div>
+
+                <div class="radio-rows">
+                    <div class="row-label">Recommend our <br>company to others</div>
+                    <div class="radios">
+                        <label><input type="radio" name="company_rec"></label>
+                        <label><input type="radio" name="company_rec"></label>
+                        <label><input type="radio" name="company_rec"></label>
+                        <label><input type="radio" name="company_rec"></label>
+                        <label><input type="radio" name="company_rec"></label>                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment row">
+                <label class="comment label">Additional comments or suggestions</label>
+                <div><textarea rows="6"></textarea></div>
+            </div>
+
+            <div class="actions">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+        </form>
+    </div>
+    
+</body>
+</html>
