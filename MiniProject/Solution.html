@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM Pagination Task</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    #change-info {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .pagination {
+      display: inline-flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .pagination li {
+      border-right: 1px solid #ddd;
+    }
+
+    .pagination li:last-child {
+      border-right: none;
+    }
+
+    .page-link {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+      background: #fff;
+      border: none;
+      outline: none;
+    }
+
+    .page-link:hover {
+      background: #f0f0f0;
+    }
+
+    .active .page-link {
+      background: #007bff;
+      color: #fff;
+      cursor: default;
+    }
+
+    .disabled .page-link {
+      color: #aaa;
+      cursor: default;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="change-info">change : 1</div>
+  <ul id="pagination" class="pagination"></ul>
+
+  <script>
+    const totalItems = 100;       
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    const paginationEl = document.getElementById('pagination');
+    const changeInfoEl = document.getElementById('change-info');
+
+    let currentPage = 1;
+
+    function setPage(page) {
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+      changeInfoEl.textContent = 'change : ' + currentPage;
+      renderPagination();
+    }
+
+    function createPageItem(text, page, disabled, active) {
+      const li = document.createElement('li');
+      const button = document.createElement('button');
+      button.textContent = text;
+      button.className = 'page-link';
+
+      if (active) {
+        li.classList.add('active');
+      }
+
+      if (disabled) {
+        li.classList.add('disabled');
+      } else {
+        button.addEventListener('click', function () {
+          setPage(page);
+        });
+      }
+
+      li.appendChild(button);
+      return li;
+    }
+
+    function renderPagination() {
+      paginationEl.innerHTML = '';
+
+      paginationEl.appendChild(
+        createPageItem('First', 1, currentPage === 1, false)
+      );
+
+      paginationEl.appendChild(
+        createPageItem('Previous', currentPage - 1, currentPage === 1, false)
+      );
+
+      for (let i = 1; i <= totalPages; i++) {
+        paginationEl.appendChild(
+          createPageItem(String(i), i, false, currentPage === i)
+        );
+      }
+
+      paginationEl.appendChild(
+        createPageItem('Next', currentPage + 1, currentPage === totalPages, false)
+      );
+
+      paginationEl.appendChild(
+        createPageItem('Last', totalPages, currentPage === totalPages, false)
+      );
+    }
+
+    renderPagination();
+
+  </script>
+</body>
+</html>
